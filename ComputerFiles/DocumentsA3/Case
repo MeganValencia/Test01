@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Case { 
+  
+  public static void main( String[] args ) { 
+    Scanner keyboard = new Scanner(System.in);
+    System.out.println("Input Age: ");
+    Scanner scan = new Scanner(System.in);
+    int ageYear = keyboard.nextInt();
+    Scanner reader = new Scanner(System.in);
+    System.out.println("First Name: ");
+    char nameFirst = reader.nextChar();
+    System.out.println("Last Name: ");
+    char nameLast = reader.nextChar();
+    System.out.println(nameFirst + nameLast + "is" + ageYear);
+  }
+}
