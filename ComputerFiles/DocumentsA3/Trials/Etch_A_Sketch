@@ -1,0 +1,127 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+ 
+public class Etch_A_Sketch implements MouseListener, MouseMotionListener {
+ 
+    JFrame window;
+    Container content;
+    int mouseX,mouseY,oldX,oldY;
+    JLabel coords;
+    JButton[] colors = new JButton[5]; 
+    Color lineColor; 
+ 
+    public Etch_A_Sketch() {
+        JFrame window = new JFrame("Classic Etch a Sketch");
+        content = window.getContentPane();
+        content.setLayout( new FlowLayout() );
+        // Add Button Listener
+        ButtonListener listener = new ButtonListener();
+        // black
+        colors[0] = new JButton("Black");
+        colors[0].addActionListener(listener);
+        // blue
+        colors[1] = new JButton("Blue");
+        colors[1].addActionListener(listener);
+        // green
+        colors[2] = new JButton("Green");
+        colors[2].addActionListener(listener);
+        // red
+        colors[3] = new JButton("Red");
+        colors[3].addActionListener(listener);
+        // yellow
+        colors[4] = new JButton("Yellow");
+        colors[4].addActionListener(listener);
+        // set default lineColor
+        lineColor = Color.black;
+                 
+        for (int i = 0; i < 5; i++)
+            content.add(colors[i]);
+        content.addMouseListener(this);        // "this" is the class that impliments that listener
+        content.addMouseMotionListener(this);  // "this" is the class that impliments that listener
+        window.setSize(640,480);
+        window.setVisible(true);
+    }
+ 
+ 
+    // ..............................................................
+    // IMPLEMENTING MOUSELISTENER REQUIRES YOU TO WRITE (OVER-RIDE) THESE METHODS 
+ 
+    public void mouseClicked( MouseEvent me) {
+        mouseX = me.getX();
+        mouseY = me.getY();     
+    }
+    public void mousePressed( MouseEvent me) {
+        mouseX = me.getX();
+        mouseY = me.getY();
+        //repaint();
+    }
+ 
+    public void mouseReleased( MouseEvent me) {
+        mouseX = me.getX();
+        mouseY = me.getY();
+        //repaint();
+    }
+ 
+    public void mouseExited( MouseEvent me) {
+        mouseX = me.getX();
+        mouseY = me.getY();
+        //repaint();
+    }
+    public void mouseEntered( MouseEvent me) {
+        mouseX = me.getX();
+        mouseY = me.getY();
+        //repaint();
+    }
+ 
+    // ...............................................................
+    // IMPLEMENTING MOUSEMOTIONLISTENER REQUIRES YOU WRITE (OVER-RIDE) THESE METHODS 
+ 
+    public void mouseDragged( MouseEvent me) {
+        mouseX = me.getX();
+        mouseY = me.getY();
+ 
+        if (oldX ==0 ) {
+            oldX=mouseX;
+            oldY=mouseY;
+            return;
+        }
+        // drawPoint( x,y );
+        Graphics g = content.getGraphics();
+        g.drawLine( oldX,oldY, mouseX, mouseY );
+        g.setColor(lineColor);
+        oldX = mouseX;
+        oldY = mouseY;
+        //repaint();
+    }
+    public void mouseMoved( MouseEvent me) {
+        mouseX = me.getX();
+        mouseY = me.getY();
+        //repaint();
+    }
+ 
+    class ButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            Component whichButton = (Component) e.getSource();
+            // black
+            if (whichButton == colors[0])
+                lineColor = Color.black;
+            // blue
+            if (whichButton == colors[1])
+                lineColor = Color.blue;
+            // green
+            if (whichButton == colors[2])
+                lineColor = Color.green;
+            // red
+            if (whichButton == colors[3])
+                lineColor = Color.red;
+            // yellow
+            if (whichButton == colors[4])
+                lineColor = Color.yellow;
+        }
+    }
+ 
+    public static void main( String[] args) {
+        new Etch_A_Sketch();
+    }
+}
