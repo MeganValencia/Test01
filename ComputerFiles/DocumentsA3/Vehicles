@@ -1,0 +1,20 @@
+public class Vehicle {
+  private int topSpeed = 50;
+  private int wheels = 4;
+  
+  public void setTopSpeed(int s){
+    topSpeed = s;
+  }
+  
+  public void setWheels(int w){
+    wheels = w;
+  }
+  
+  public int getTopSpeed(){
+    return topSpeed;
+  }
+  
+  public int getWheel(){
+    return wheels;
+  }
+}
