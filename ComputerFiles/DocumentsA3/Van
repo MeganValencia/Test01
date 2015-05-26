@@ -1,0 +1,20 @@
+public class Van extends Vehicle{
+  private int doorCount = 6;
+  private int length = 0;
+  private int width = 0;
+  private int height = 0;
+  
+  public Van(int l, int w, int h){
+    length = l;
+    width = w
+    height = h;
+  }
+  
+  public void DoorCount(int d){
+    doorCount = d;
+  }
+  
+  public int getDoorCount(){
+    return doorCount;
+  }
+}
