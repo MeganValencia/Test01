@@ -1,0 +1,69 @@
+import java.util.Calendar; 
+import java.util.Date; 
+import java.util.Scanner;
+
+
+public class AgeCalc { 
+
+public static void main( String[] args ) { 
+    Scanner keyboard = new Scanner(System.in);
+    Calendar birthday = Calendar.getInstance(); 
+    Calendar today = Calendar.getInstance(); 
+    System.out.println("Input Year: ");
+    Scanner scan = new Scanner(System.in);
+    int birthYear = keyboard.nextInt();
+    System.out.println("Input Month: ");
+    int birthMonth = keyboard.nextInt();
+    System.out.println("Input Day: ");
+    int birthDay = keyboard.nextInt();
+    System.out.println(birthYear + "\\" + birthMonth  + "\\" + birthDay);
+    
+     Date date = new Date();
+     System.out.printf("%s %tB %<te, %<tY", 
+                         "Today is", date);
+  }
+}
+/*
+//(year,month,day)
+//birthday.set(1998,8,21); //calendar is an array, 
+// so Jan would be month 0, Feb is 1, and so forth up to 11 for Dec 
+
+// get milliseconds 
+//long milis1 = birthday.getTimeInMillis(); 
+//long milis2 = today.getTimeInMillis(); 
+
+
+//milliseconds 
+//long diff = milis2 - milis1; 
+
+//seconds 
+//long diffSeconds = diff / 1000; 
+
+//minutes 
+//long diffMinutes = diff / (60 * 1000); 
+//hours 
+//long diffHours = diff / (60 * 60 * 1000); 
+
+//days 
+//long diffDays = diff / (24 * 60 * 60 * 1000); 
+
+//months
+//long diffMonths = diff / (30 * 24 * 60 * 60 * 1000); 
+
+//years
+//long diffYears = diff / (12 * 30 * 24 * 60 * 60 * 1000); 
+
+System.out.println("In milliseconds: " + diff + " milliseconds."); 
+System.out.println("In seconds: " + diffSeconds + " seconds."); 
+System.out.println("In minutes: " + diffMinutes + " minutes."); 
+System.out.println("In hours: " + diffHours + " hours."); 
+System.out.println("In days: " + diffDays + " days."); 
+System.out.println("In months: " + diffMonths + " months."); 
+System.out.println("In years: " + diffYears + " years."); 
+
+
+Date b = new Date(milis1); 
+System.out.println("b: "+ b.toString()); 
+System.out.println("t: "+ new Date(milis2)); 
+} 
+} */
