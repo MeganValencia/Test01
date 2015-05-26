@@ -1,0 +1,18 @@
+public class Planet extends Sun{
+  private int gravity;
+  private int inertia;
+  
+  public void setGravity(int g){
+    gravity = 0;
+  }
+  public void setInertia(int i){
+    inertia = 0;
+  }
+
+  public int getGravity(){
+    return gravity;
+  }
+  public int getInertia(){
+    return inertia;
+  }
+}
