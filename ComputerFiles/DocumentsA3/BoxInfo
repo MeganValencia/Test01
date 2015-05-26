@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class BoxInfo{
+  public static void main (String[] args){
+      Scanner keyboard = new Scanner (System.in);
+    
+      System.out.println ("Enter Prefered Units - ft or m:");
+      String units = keyboard.nextLine();
+      System.out.println("Enter Length:");
+      float inputL = keyboard.nextFloat();
+      System.out.println("Enter Width:");
+      float inputW = keyboard.nextFloat();
+      System.out.println("Enter Height:");
+      float inputH = keyboard.nextFloat();
+      
+      Box input = new Box();
+      if (units.equals ("ft")){
+      System.out.println("Box Volume Is: " + input.calcVolume(inputL,inputW,inputH) +units + " cubed");
+      System.out.println("Box Surface Area Is: " + input.calcSurfArea(inputL,inputW,inputH)+units + " squared");
+      
+      System.out.println("Box Volume Is: " + (3.2808*input.calcVolume(inputL,inputW,inputH)) +"m" + " cubed");
+      System.out.println("Box Surface Area Is: " + (3.2808*input.calcSurfArea(inputL,inputW,inputH))+"m" + " squared");
+    }else if (units.equals ("m")){
+      
+        System.out.println("Box Volume Is: " + input.calcVolume(inputL,inputW,inputH) +units + " cubed");
+      System.out.println("Box Surface Area Is: " + input.calcSurfArea(inputL,inputW,inputH)+units + " squared");
+      
+      System.out.println("Box Volume Is: " + (.30480*input.calcVolume(inputL,inputW,inputH)) +"ft" + " cubed");
+      System.out.println("Box Surface Area Is: " + (.30480*input.calcSurfArea(inputL,inputW,inputH))+"ft" + " squared");
+    }else{
+      System.out.println ("Invalid units");
+    }
+  }
+}
