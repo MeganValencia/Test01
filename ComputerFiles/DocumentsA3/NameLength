@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class NameLength {
+
+   public static void main(String args[]) {
+      Scanner input = new Scanner (System.in);
+      NameC nameAndAge = new NameC ();
+      System.out.print ("Enter your first name: ");
+      String firstName = input.next ();
+      System.out.print ("Enter your last name: ");
+      String lastName = input.next ();
+      System.out.println (firstName + " " + lastName );
+      String palindrome = (firstName + " " + lastName );
+      int len = palindrome.length();
+      System.out.println( "String Length is : " + len );
+   }
+}
