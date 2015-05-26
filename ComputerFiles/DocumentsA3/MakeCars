@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class MakeCars {
+  public class void main(String[] args){
+    Scanner in = new Scanner(System.in);
+    Van myVan = new Van();
+    //MotorCycle myMotorCycle = new MotorCycle();
+    
+    System.out.println("The current top speed of your van is: " + myVan.getTopSpeed());
+    System.out.println("The number of doors on your van is: " + myVan.getDoorCount());
+    System.out.println("The number of wheels on your van is: " + myVan.getWheel());
+    
+    System.out.println("Lets modify your van with a new engine, how fast would you like it to go?: ");
+    myVan.setTopSpeed(in.nextInt());
+    
+    System.out.println("Your new van now goes " + myVan.getTopSpeed() + "miles per hour");
+    
+    
+  }
+}
