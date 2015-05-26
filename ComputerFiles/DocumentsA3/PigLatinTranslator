@@ -1,0 +1,17 @@
+import java.io.*;
+import java.util.Scanner;
+
+class PigLatinTranslator {
+  public static void main (String[] args) {
+    Scanner keyboard = new Scanner (System.in);
+    String Str1, Str2, Str3, Str4;
+    System.out.print ("Enter your name: ");
+    Str1 = keyboard.nextLine ();
+    Str2 = Str1.substring (0,1);
+    System.out.print ("Enter your last name: ");
+    Str3 = keyboard.nextLine ();
+    Str4 = Str3.substring (0,1);
+    System.out.print ("Your name in Pig Latin is: " + Str1.substring(1) + Str2 + "ay" + " " + Str3.substring(1) + Str4 + "ay");
+  }
+}
+
