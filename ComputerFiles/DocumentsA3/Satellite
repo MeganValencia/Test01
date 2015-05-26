@@ -1,0 +1,12 @@
+public class Satellite extends Planet{
+  public static String name = "Satellite";
+  private int momentum;
+ 
+  public void setMomentum(int m) {
+    momentum = 0;
+  }
+
+  public int getMomentum() {
+    return momentum;
+  }
+}
