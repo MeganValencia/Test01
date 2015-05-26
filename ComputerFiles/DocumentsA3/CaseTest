@@ -1,0 +1,8 @@
+import java.io.*;
+
+public class CaseTest{
+   public static void main(String args[]){
+      String Str = new String("welcome HOME");
+      System.out.println(Str.toLowerCase() );
+   }
+}
