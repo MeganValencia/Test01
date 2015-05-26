@@ -1,0 +1,33 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar; 
+import java.util.Date; 
+import java.util.Scanner;
+ 
+public class DateC {
+     public static void main( String[] args ) {
+     Scanner keyboard = new Scanner(System.in);
+     Calendar birthday = Calendar.getInstance(); 
+     Calendar today = Calendar.getInstance(); 
+     System.out.println("Input Year: ");
+     Scanner scan = new Scanner(System.in);
+     int birthYear = scan.netInt();
+     System.out.println("Input Month: ");
+     int birthMonth = scan.nextint();
+     System.out.println("Input Day: ");
+     int birthDay = scan.netInt();
+     System.out.println("birthYear '/' + birthMonth '/' + birthDay");
+     try{
+ 
+      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+         Date date1 = new Date();
+         Date date2 = sdf.parse("Scanner scan = new Scanner(System.in)");
+ 
+         System.out.println(sdf.format(date1));
+         System.out.println(sdf.format(date2));
+         
+     } catch(ParseException ex) {
+      ex.printStackTrace();
+     }
+    }
+}
