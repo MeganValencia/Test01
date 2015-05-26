@@ -1,0 +1,74 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+ *                          Menu:                            *
+ *                       Snake Game                          *
+ *                                                           *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class SGM extends Frame implements WindowListener,ActionListener {
+        TextField text = new TextField(25);
+        Button a;
+        Button b;
+        Button c;
+        Button e;
+        int pointA = 0;
+
+        public static void main(String[] args) {
+                SGM myWindow = new SGM("SNAKE GAME");
+                myWindow.setSize(800,300);
+                myWindow.setVisible(true);
+        }
+
+        public SGM(String title) {
+
+                super(title);
+                setResizable(true);
+                setLayout(new GridLayout());
+                addWindowListener(this);
+                
+                a = new Button("PLAY");
+                add(a);
+                add(text);
+                //a.addActionListener(this);
+                
+                b = new Button("SETTINGS");
+                add(b);
+                add(text);
+                //b.addActionListener(this);
+                
+                c = new Button("INFO");
+                add(c);
+                add(text);
+                //c.addActionListener(this);
+                
+                e = new Button("???");
+                add(e);
+                add(text);
+                e.addActionListener(this);
+        }
+
+        public void actionPerformed(ActionEvent e) {
+          if (pointA <= 0) {
+            pointA++;
+            text.setText("Button Clicked " + pointA + " times");
+          } else{
+            pointA--;
+            text.setText("Button Clicked " + pointA + " times");
+          }
+        }
+
+        public void windowClosing(WindowEvent e) {
+                dispose();
+                System.exit(0);
+        }
+
+        public void windowOpened(WindowEvent e) {}
+        public void windowActivated(WindowEvent e) {}
+        public void windowIconified(WindowEvent e) {}
+        public void windowDeiconified(WindowEvent e) {}
+        public void windowDeactivated(WindowEvent e) {}
+        public void windowClosed(WindowEvent e) {}
+
+}
