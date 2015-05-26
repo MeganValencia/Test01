@@ -1,0 +1,71 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+ 
+public class DrawLine extends JFrame {
+ 
+    // Constructor
+    public DrawLine() {
+ 
+        // Add CreateLine Panel
+        add(new CreateLine());
+ 
+    }
+ 
+    // Main Method
+    public static void main(String[] args) {
+ 
+        // Create GUI Settings
+        DrawLine frame = new DrawLine();
+        frame.setTitle("Test for Snake");
+        frame.setSize(500, 500);    
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+ 
+ 
+    // Inner Class For Receiving Input
+    static class CreateLine extends JPanel {
+ 
+        // Declare Variables
+        private int x1 = 250;
+        private int y1 = 250;
+        private int x2 = 250;
+        private int y2 = 250;
+ 
+        // Constructor
+        public CreateLine() {
+ 
+            // Set Focus
+            setFocusable(true);
+ 
+            // Add Key Listener
+            addKeyListener(new KeyAdapter() {
+ 
+                // Key Direction Method
+                public void keyPressed(KeyEvent e) {
+                    switch (e.getKeyCode()) {
+                        case KeyEvent.VK_UP:
+                          x1 = x2; y2 -= 10; break;
+                        case KeyEvent.VK_DOWN:
+                          x1 = x2; y2 += 10; break;
+                        case KeyEvent.VK_LEFT:
+                          y1 = y2; x2 -= 10; break;
+                        case KeyEvent.VK_RIGHT:
+                          y1 = y2; x2 += 10; break;
+                    }
+                    // Paint Lines
+                    repaint();
+                }
+            });
+        }
+ 
+        // Graphics Method
+        public void paintComponent(Graphics g) {
+            // Draw Lines
+            g.drawLine(x1, y1, x2, y2);
+            g.setColor(Color.LIGHT_GRAY);
+        }
+    }
+}
