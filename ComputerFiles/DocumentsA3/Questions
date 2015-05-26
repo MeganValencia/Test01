@@ -1,0 +1,28 @@
+import java.util.Random;
+import java.util.Scanner;
+import java.io.IOException;
+import java.io.File;
+import java.io.FileWriter;
+public class Questions{
+  public static void main(String[]args) throws IOException{
+    String[] question=new String[10];
+    Scanner keyboard=new Scanner(System.in);
+    Random generator=new Random();
+    question[0]="How do you really feal?";
+    question[1]="Are we real?";
+    question[2]="Did you really do that?";
+    question[3]="Why are you here?";
+    question[4]="Who is that behind you?";
+    question[5]="Why do we live how we live?";
+    question[6]="What is the answer to life?";
+    question[7]="Who are you?";
+    question[8]="Did you know...?";
+    question[9]="Why?";
+    String questions=" ";
+    String answer=" ";
+    questions=question[generator.nextInt(10)];
+    System.out.println(questions);
+    answer=keyboard.nextLine();
+    File outputF=new File("output.txt");
+  }
+}
