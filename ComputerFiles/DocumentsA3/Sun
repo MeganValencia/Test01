@@ -1,0 +1,10 @@
+public class Sun{
+  private int force;
+  
+  public void setForce(int f){
+    force = 0;
+  }
+  public int getForce(){
+    return force;
+  }
+}
