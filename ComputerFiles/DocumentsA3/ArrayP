@@ -1,0 +1,17 @@
+import java.util.*;
+public class ArrayP {
+  public static void main (String[] args) {
+    Scanner k = new Scanner (System.in);
+    System.out.print ("Max Number on Dice: ");
+    int maxDice = k.nextInt ();
+    System.out.print ("Quantity of Dice: ");
+    int quantityDice = k.nextInt ();
+    int[] dice = new int [maxDice];
+    for (int i = 0; i < dice.length; i++) {
+      dice[i] = i + 1;
+    }
+    for (int i = 1; i <= quantityDice; i++) {
+      System.out.print ("Dice Number " + i + " is: " + dice[(int) (Math.random() * dice.length)] + "; ");
+    }
+  }
+}
