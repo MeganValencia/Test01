@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class MakeOrbit{
+  public static void main (String[] args){
+    Scanner keyboard = new Scanner(System.in);
+    Planet myPlanet = new Planet();
+    Satellite mySatellite = new Satellite();
+    
+    System.out.println("Welcome to your solar system! Please enter the mass of your new sun.");
+    keyboard.nextLine();
+  }
+}
