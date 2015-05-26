@@ -1,0 +1,18 @@
+import java.util.Scanner;
+import java.io.*;
+
+
+public class NameCaseTest {
+  public static void main (String[] args) {
+    Scanner input = new Scanner (System.in);
+    NameC nameAndAge = new NameC ();
+    System.out.print ("Enter your first name: ");
+    String firstName = input.next ();
+    System.out.print ("Enter your last name: ");
+    String lastName = input.next ();
+    System.out.println (firstName + " " + lastName );
+
+    String Str = new String(firstName + " " + lastName );
+    System.out.println(Str.toLowerCase() );
+   }
+}
